@@ -53,9 +53,9 @@ public class MojoDoc {
             paramDescriptions = methodParamDescriptions.values();
         }
         Parameter[] parameters = method.getParameters();
+
         for (int i = 0; i < parameters.length; i++) {
             if(parameters[i].getAnnotationsByType(RequestBody.class).length == 0) {
-
                 MojoItem kItem = new MojoItem();
                 try {
                     kItem.setName(paramDescriptions[i]);
@@ -87,5 +87,9 @@ public class MojoDoc {
             mojoMethod.setRequestContent(methodRequestContent.value());
         }
         return mojoMethod;
+    }
+
+    private void createParam() {
+
     }
 }
